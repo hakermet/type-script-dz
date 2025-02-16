@@ -3,19 +3,33 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "tsc --outDir dist && cp -r ./index.html ./dist && node dist/index.js"
+    "build": "webpack --mode production && tsc --project tsconfig.server.json",
+    "start": "node dist/server/index.js",
+    "dev": "webpack --mode development --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@types/react": "^19.0.9",
+    "@types/react-dom": "^19.0.3",
     "express": "^4.21.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
     "typescript": "^5.7.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.26.0",
     "@types/express": "^5.0.0",
-    "@types/node": "^22.13.4"
+    "@types/node": "^22.13.4",
+    "html-webpack-plugin": "^5.6.3",
+    "ts-loader": "^9.5.2",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
   }
 }
