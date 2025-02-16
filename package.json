@@ -1,0 +1,27 @@
+{
+  "name": "dependency-injection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/app.module.js",
+    "start:dev": "ts-node dist/app.module.ts",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/mongoose": "^11.0.1",
+    "mongoose": "^8.10.1",
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/mongoose": "^5.11.96",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
