@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const routeA_1 = require("./routeA");
+const routeB_1 = require("./routeB");
+const routeA = new routeA_1.RouteA();
+const routeB = new routeB_1.RouteB();
+const routeAResult = routeA.calculateRoute('Львів', 'Київ');
+console.log(routeAResult);
+const routeBResult = routeB.calculateRoute('Київ', 'Львів');
+console.log(routeBResult);
