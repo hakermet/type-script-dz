@@ -6,7 +6,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-app.get('/', (req: Request, res: Response) => {
+app.all('*', (req: Request, res: Response) => {
   res.sendFile(__dirname + '/index.html');
 });
 
