@@ -1,20 +1,99 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Socket.IO чат</title>
-    <style>
-      body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
 
-      #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
-      #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
-      #input:focus { outline: none; }
-      #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
-
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages > li { padding: 0.5rem 1rem; }
-      #messages > li:nth-child(odd) { background: #efefef; }
-    </style>
-  </head>
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Socket.IO чат</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+        <style>
+          body { 
+            margin: 0; 
+            padding-bottom: 3rem; 
+            font-family: 'Poppins', sans-serif;
+            background-color: #e9ecef;
+            color: #2c3e50;
+          }
+    
+          #form { 
+            background: #ffffff; 
+            padding: 1rem;
+            position: fixed; 
+            bottom: 0; 
+            left: 0; 
+            right: 0; 
+            display: flex; 
+            height: 4rem; 
+            box-sizing: border-box; 
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+          }
+    
+          #input { 
+            border: 2px solid #e0e0e0; 
+            padding: 0 1.5rem; 
+            flex-grow: 1; 
+            border-radius: 25px; 
+            margin: 0.25rem; 
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+          }
+    
+          #input:focus { 
+            outline: none; 
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+          }
+    
+          #form > button { 
+            background: #3498db; 
+            border: none; 
+            padding: 0 2rem; 
+            margin: 0.25rem; 
+            border-radius: 25px; 
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+          }
+    
+          #form > button:hover {
+            background: #2980b9;
+            transform: translateY(-1px);
+          }
+    
+          #messages { 
+            list-style-type: none; 
+            margin: 0; 
+            padding: 1.5rem; 
+            max-width: 800px;
+            margin: 0 auto;
+          }
+    
+          #messages > li { 
+            padding: 1rem 1.5rem; 
+            margin: 0.7rem 0;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            animation: fadeIn 0.3s ease;
+          }
+    
+          #messages > li:nth-child(odd) { 
+            background: #ebf5fb; 
+            margin-right: 2rem;
+          }
+    
+          #messages > li:nth-child(even) { 
+            background: #ffffff;
+            margin-left: 2rem;
+          }
+    
+          @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+        </style>
+      </head>
   <body>
     <ul id="messages"></ul>
     <form id="form" action="">
